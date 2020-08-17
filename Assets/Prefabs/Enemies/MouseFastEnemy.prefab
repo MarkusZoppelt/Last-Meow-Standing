@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 2138162228562445652}
   health: {fileID: 4409824424734900064}
-  movementSpeed: 2
+  movementSpeed: 4
   characterRenderer: {fileID: 4879260546371054688}
 --- !u!1001 &492500917182083973
 PrefabInstance:
@@ -78,31 +78,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4999887720298274789, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999887720298274789, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999887720298274789, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4999887720298274789, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -6034262829731383825, guid: 3d90c1b1893aebc4aa8a8b50279c5dff,
-        type: 3}
     - target: {fileID: 4999887720298274791, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
         type: 3}
       propertyPath: m_Name
-      value: MouseBasicSprite
+      value: MouseFastSprite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bb9e38a35d7dfe479a30164b3d655d8, type: 3}
@@ -122,7 +101,7 @@ PrefabInstance:
     - target: {fileID: 6327651429872717639, guid: 22d867c7e3e1a4e41b80e695896568db,
         type: 3}
       propertyPath: m_Name
-      value: MouseEnemy
+      value: MouseFastEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 6327651429872717640, guid: 22d867c7e3e1a4e41b80e695896568db,
         type: 3}
@@ -224,6 +203,16 @@ PrefabInstance:
         type: 3}
       propertyPath: deathSoundName
       value: EnemyHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597026132287239550, guid: 22d867c7e3e1a4e41b80e695896568db,
+        type: 3}
+      propertyPath: maxHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597026132287239550, guid: 22d867c7e3e1a4e41b80e695896568db,
+        type: 3}
+      propertyPath: score
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22d867c7e3e1a4e41b80e695896568db, type: 3}

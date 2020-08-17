@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform playerTransform;
 
     [Header("Settings")]
-    [SerializeField] private float playerDistanceThreshold = 2f;
+    [SerializeField] private float playerDistanceThreshold = 4f;
     [SerializeField] private float maxSpawnTimer = 5f;
     [SerializeField] private float timerMultiplicator = 0.95f;
 

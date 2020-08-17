@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class EnemyMouse : MonoBehaviour
 {
-    [SerializeField] internal Rigidbody2D body;
-    [SerializeField] internal EnemyHealth health;
-    [SerializeField] internal float movementSpeed;
-    [SerializeField] internal SpriteRenderer characterRenderer;
+    [SerializeField] internal Rigidbody2D body = null;
+    [SerializeField] internal EnemyHealth health = null;
+    [SerializeField] internal float movementSpeed = 0f;
+    [SerializeField] internal SpriteRenderer characterRenderer = null;
    
     internal Transform target;
 
-    internal virtual void Start() {
-        // call out loud
-        movementSpeed = 2f;
+    internal virtual void Start() 
+    {
+
     }
 
-    internal virtual void FixedUpdate() {
+    internal virtual void FixedUpdate() 
+    {
         if (target == null) {
             return;
         }
@@ -29,7 +30,8 @@ public class EnemyMouse : MonoBehaviour
         }
     }
 
-    private void Move(Vector2 direction) {
+    private void Move(Vector2 direction) 
+    {
         body.velocity = direction * movementSpeed;
     }
 
