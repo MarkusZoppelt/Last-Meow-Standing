@@ -43,8 +43,8 @@ public class MainMenuController : MonoBehaviour
     {
         UpdateAudioMixerGroupVolumes(MusicVolumeSlider.value, SFXVolumeSlider.value);
 
-        MusicVolumeSliderPercentText.text = MusicVolumeSlider.value*100 + "%";
-        SFXVolumeSliderPercentText.text = SFXVolumeSlider.value*100 + "%";
+        MusicVolumeSliderPercentText.text = (int)(MusicVolumeSlider.value * 100) + "%";
+        SFXVolumeSliderPercentText.text = (int)(SFXVolumeSlider.value * 100) + "%";
     }
 
     public void UpdateAudioMixerGroupVolumes(float musicVolumeValue, float sfxVolumeValue)
