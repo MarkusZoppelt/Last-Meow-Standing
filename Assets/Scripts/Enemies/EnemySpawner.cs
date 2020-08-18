@@ -19,20 +19,33 @@ public class EnemySpawner : MonoBehaviour
 
     private int totalWeight = 0;
     private float spawnTimer;
+    public bool isWorking = true;
+    private List<EnemySpawnData> currentSpawnOptions = new List<EnemySpawnData>();
 
     private void Start()
     {
-        foreach(var data in spawnOptions)
-        {
-            totalWeight += data.weight;
-        }
-
         spawnTimer = Random.Range(0f, maxSpawnTimer);
+        GenerateWeights(LevelType.White);
+    }
+
+    public void GenerateWeights(LevelType levelType)
+    {
+        Debug.Log("Starting a " + Enum.GetName(typeof(LevelType), levelType) + " level!");
+        currentSpawnOptions.Clear();
+        foreach (var data in spawnOptions)
+        {
+            if ((data.levelType & levelType) != 0)
+            {
+                totalWeight += data.weight;
+                currentSpawnOptions.Add(data);
+            }
+        }
     }
 
     private void Update()
     {
-        spawnTimer -= Time.deltaTime;
+        if (isWorking)
+            spawnTimer -= Time.deltaTime;
 
         if(spawnTimer <= 0f)
         {
@@ -44,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
     {
         var weightSelector = Random.Range(0, totalWeight);
 
-        foreach(var data in spawnOptions)
+        foreach(var data in currentSpawnOptions)
         {
             if(weightSelector > data.weight)
             {

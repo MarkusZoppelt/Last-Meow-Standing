@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2138162228562445657, guid: 224c89d3b21df60469f4b34aef474f6f, type: 3}
   weight: 15
+  levelType: 8
