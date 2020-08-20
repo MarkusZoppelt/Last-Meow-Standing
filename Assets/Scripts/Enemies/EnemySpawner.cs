@@ -30,8 +30,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void GenerateWeights(LevelType levelType)
     {
-        Debug.Log("Starting a " + Enum.GetName(typeof(LevelType), levelType) + " level!");
         currentSpawnOptions.Clear();
+        totalWeight = 0;
         foreach (var data in spawnOptions)
         {
             if ((data.levelType & levelType) != 0)
@@ -40,6 +40,7 @@ public class EnemySpawner : MonoBehaviour
                 currentSpawnOptions.Add(data);
             }
         }
+        Debug.Log("Starting a " + Enum.GetName(typeof(LevelType), levelType) + " level!");
     }
 
     private void Update()
@@ -57,6 +58,7 @@ public class EnemySpawner : MonoBehaviour
     {
         var weightSelector = Random.Range(0, totalWeight);
 
+        if (playerTransform != null)
         foreach(var data in currentSpawnOptions)
         {
             if(weightSelector > data.weight)
