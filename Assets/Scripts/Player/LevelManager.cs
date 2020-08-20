@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour
                 timer -= levelLength;
                 spawner.isWorking = false;
                 isLevel = false;
+                // GarrettShader.SetColor(Color.gray);
             }
         }
         else
@@ -35,6 +36,7 @@ public class LevelManager : MonoBehaviour
                 var values = LevelType.GetValues(typeof(LevelType));
                 LevelType type = (LevelType)values.GetValue(Random.Range(0, values.Length));
                 spawner.GenerateWeights(type);
+                // GarrettShader.SetColor(Levels.Colors[type]);
             }
         }
     }
