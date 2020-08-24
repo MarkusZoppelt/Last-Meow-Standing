@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1066,6 +1067,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &848654943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7062041284198680342, guid: 7c2ed77414d193644a6c951e396e8ea8,
+    type: 3}
+  m_PrefabInstance: {fileID: 348289068}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &951955237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,6 +1237,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1386,6 +1394,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1638,6 +1647,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.392}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2271,6 +2281,9 @@ MonoBehaviour:
   spawner: {fileID: 2077661523}
   levelLength: 10
   waitPeriodLength: 2
+  arena: {fileID: 848654943}
+  rainbowScrollMaterial: {fileID: 2100000, guid: d8fec2e3f5f8ee64ba3887d702fe1384,
+    type: 2}
 --- !u!4 &1823289199
 Transform:
   m_ObjectHideFlags: 0
@@ -2349,6 +2362,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
