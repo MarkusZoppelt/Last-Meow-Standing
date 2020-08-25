@@ -37,7 +37,6 @@ public class EnemySpawner : MonoBehaviour
             if ((data.levelType & levelType) != 0)
             {
                 totalWeight += data.weight;
-                data.colorOverlay = Levels.Colors[levelType];
                 currentSpawnOptions.Add(data);
             }
         }
@@ -83,7 +82,6 @@ public class EnemySpawner : MonoBehaviour
             var enemyObject = Instantiate(data.prefab, spawnPosition, Quaternion.identity);
             var enemy = enemyObject.GetComponent<EnemyMouse>();
             enemy.SetTarget(playerTransform);
-            enemy.SetColorOverlay(data.colorOverlay);
             break;
         }
 

@@ -8,7 +8,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private EnemySpawner spawner;
     [SerializeField] private float levelLength;
     [SerializeField] private float waitPeriodLength;
+    [Header("VFX")]
+    [Tooltip("The main playable area that will change colors when the level changes.")]
     [SerializeField] private GameObject arena;
+    [Tooltip("Material to change the level too that will signify the rainbow level phase.")]
     [SerializeField] private Material rainbowScrollMaterial;
 
     // Level Progression
@@ -17,19 +20,20 @@ public class LevelManager : MonoBehaviour
     // VFX
     private List<Material> arenaMaterials = new List<Material>();
     private string shaderColorFieldUID = "Color_7A7AB713";
-    TilemapRenderer[] tmrComponents;
+    List<TilemapRenderer> tmrComponents;
     
-    private void Awake()
+    internal virtual void Awake()
     {
-        // Get and store the materials for the wall and floor
-        tmrComponents = arena.GetComponentsInChildren<TilemapRenderer>();
+        // Get and store the starting materials for the wall and floor. Well need them after we transition
+        // back from the rainbow level
+        tmrComponents = new List<TilemapRenderer>(arena.GetComponentsInChildren<TilemapRenderer>());
         foreach (TilemapRenderer tmr in tmrComponents)
         {
             arenaMaterials.Add(tmr.sharedMaterial);
         }
     }
 
-    void Update()
+    internal virtual void Update()
     {
         timer += Time.deltaTime;
 
@@ -54,24 +58,27 @@ public class LevelManager : MonoBehaviour
                 var values = LevelType.GetValues(typeof(LevelType));
                 LevelType type = (LevelType)values.GetValue(Random.Range(0, values.Length));
                 spawner.GenerateWeights(type);
+                // Change the color of the level
                 SetLevelColorOverlay(Levels.Colors[type]);
             }
         }
     }
 
-    // Sets a color addative for the wall and floor.
+    // Sets a color addative for the wall and floor. If Color.black is provided, the rainbow level will begin.
     private void SetLevelColorOverlay(Color color)
     {
         if (color == Color.black)
         {
-            for(int i = 0; i < tmrComponents.Length; i++)
+            // Rainbow level
+            for(int i = 0; i < tmrComponents.Count; i++)
             {
                 tmrComponents[i].material = rainbowScrollMaterial;
             }
         }
         else
         {
-            for(int i = 0; i < tmrComponents.Length; i++)
+            // Standard color levels
+            for(int i = 0; i < tmrComponents.Count; i++)
             {
                 tmrComponents[i].material = arenaMaterials[i];
                 tmrComponents[i].material.SetColor(shaderColorFieldUID, color);

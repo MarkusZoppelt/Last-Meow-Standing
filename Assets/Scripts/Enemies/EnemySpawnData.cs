@@ -8,5 +8,4 @@ public class EnemySpawnData : ScriptableObject
     public GameObject prefab;
     public int weight;
     public LevelType levelType;
-    public Color colorOverlay;
 }
