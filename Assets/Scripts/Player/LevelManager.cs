@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Material rainbowScrollMaterial;
 
     // Level Progression
-    private float timer;
+    private float timer = 0;
     private bool isLevel = true;
     // VFX
     private List<Material> arenaMaterials = new List<Material>();
@@ -24,13 +24,14 @@ public class LevelManager : MonoBehaviour
     
     internal virtual void Awake()
     {
-        // Get and store the starting materials for the wall and floor. Well need them after we transition
+        // Get and store the starting materials for the wall and floor. We'll need them after we transition
         // back from the rainbow level
         tmrComponents = new List<TilemapRenderer>(arena.GetComponentsInChildren<TilemapRenderer>());
         foreach (TilemapRenderer tmr in tmrComponents)
         {
             arenaMaterials.Add(tmr.sharedMaterial);
         }
+        SetLevelColorOverlay(Levels.Colors[LevelType.White]);
     }
 
     internal virtual void Update()
@@ -52,13 +53,14 @@ public class LevelManager : MonoBehaviour
             if (timer > waitPeriodLength)
             {
                 timer -= waitPeriodLength;
-                spawner.isWorking = true;
                 isLevel = true;
-
+                spawner.isWorking = true;
+            }
+            else
+            {
                 var values = LevelType.GetValues(typeof(LevelType));
                 LevelType type = (LevelType)values.GetValue(Random.Range(0, values.Length));
                 spawner.GenerateWeights(type);
-                // Change the color of the level
                 SetLevelColorOverlay(Levels.Colors[type]);
             }
         }

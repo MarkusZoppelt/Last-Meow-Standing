@@ -29,8 +29,8 @@ public static class Levels
         { LevelType.Magenta, Color.magenta },
         { LevelType.Cyan, Color.cyan },
         { LevelType.Pink, new Color(1, .713f, 0.756f) },
-        { LevelType.Neon, new Color(.224f, 1, 0.078f) },
-        { LevelType.Azur, new Color(.847f, 1, 1f) },
+        { LevelType.Neon, new Color(.224f*2, 1, .224f*2) },
+        { LevelType.Azur, new Color(.847f/2, 0.5f, 1f) },
         { LevelType.Rainbow, Color.black },
     };
 }
