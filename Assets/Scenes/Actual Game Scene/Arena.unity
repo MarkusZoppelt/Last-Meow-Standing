@@ -1067,12 +1067,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &848654943 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7062041284198680342, guid: 7c2ed77414d193644a6c951e396e8ea8,
-    type: 3}
-  m_PrefabInstance: {fileID: 348289068}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &951955237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,6 +1663,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462758766}
   m_CullTransparentMesh: 0
+--- !u!1 &1480619458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7062041285349199724, guid: 7c2ed77414d193644a6c951e396e8ea8,
+    type: 3}
+  m_PrefabInstance: {fileID: 348289068}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1556526252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,7 +2281,7 @@ MonoBehaviour:
   spawner: {fileID: 2077661523}
   levelLength: 10
   waitPeriodLength: 2
-  arena: {fileID: 848654943}
+  arenaWalls: {fileID: 1480619458}
   rainbowScrollMaterial: {fileID: 2100000, guid: d8fec2e3f5f8ee64ba3887d702fe1384,
     type: 2}
 --- !u!4 &1823289199
