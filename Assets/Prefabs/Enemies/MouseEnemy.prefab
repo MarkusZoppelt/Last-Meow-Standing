@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 2138162228562445652}
   health: {fileID: 4409824424734900064}
-  movementSpeed: 0
+  movementSpeed: 2
   characterRenderer: {fileID: 4879260546371054688}
 --- !u!1001 &492500917182083973
 PrefabInstance:
@@ -78,6 +78,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4999887720298274788, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 65348c66e37b64941adf597ac31b1fa2, type: 2}
+    - target: {fileID: 4999887720298274789, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999887720298274789, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999887720298274789, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999887720298274789, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6034262829731383825, guid: 3d90c1b1893aebc4aa8a8b50279c5dff,
+        type: 3}
+    - target: {fileID: 4999887720298274789, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 4999887720298274791, guid: 6bb9e38a35d7dfe479a30164b3d655d8,
         type: 3}
       propertyPath: m_Name

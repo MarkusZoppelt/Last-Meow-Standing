@@ -46,8 +46,9 @@ MonoBehaviour:
   spawnOptions:
   - {fileID: 11400000, guid: 84c321c34e72506478bdd5fc7739a197, type: 2}
   - {fileID: 11400000, guid: 96ed8c69c8db8614ba6f208e6297c038, type: 2}
+  - {fileID: 11400000, guid: 5dc9e420d1ad51941806b8dc8e1c753c, type: 2}
   - {fileID: 11400000, guid: 72843a2902505494b862beca919e24e2, type: 2}
   playerTransform: {fileID: 0}
-  playerDistanceThreshold: 2
+  playerDistanceThreshold: 4
   maxSpawnTimer: 5
   timerMultiplicator: 0.95
